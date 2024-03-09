@@ -1,0 +1,365 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/** END OF CSS RESET */
+:root {
+  /* Colors */
+  --primary-color: hsl(227, 92%, 58%);
+  --secondary-color: hsl(215 31% 21%);
+  --tertiary-color: hsl(215 17% 45%);
+  --neutral-color: hsl(0 0% 100%);
+  --border-color: hsl(200 24% 88%);
+
+  /* font family */
+  --ff-primary: "Inter", sans-serif;
+
+  /* Font size  */
+  --fs-heading-small: 1.25rem;
+  --fs-heading-medium: 1.5rem;
+  --fs-heading-large: 2rem;
+  --fs-heading-xlarge: 3rem;
+
+  --fs-regular-small: 0.875rem;
+  --fs-regular-medium: 1rem;
+
+  /* Line Height  */
+  --lh-heading: 1.1;
+  --lh-regular: 1.5;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-bolder: 800;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-regular-medium);
+  background-color: var(--neutral-color);
+  position: relative;
+}
+
+p {
+  color: var(--tertiary-color);
+}
+
+.logo {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.logo img {
+  height: 2.5rem;
+  margin: auto;
+}
+
+.bg-rectangle {
+  position: absolute;
+  background: linear-gradient(
+    to bottom right,
+    var(--neutral-color) 5%,
+    var(--tertiary-color)
+  );
+  opacity: 0.2;
+  height: 70vh;
+  width: 100%;
+  z-index: -1;
+  border-radius: 2rem;
+  top: 0;
+  margin-top: -2rem;
+}
+
+.container {
+  padding-inline: 1.5rem;
+  margin-bottom: 1rem;
+}
+.first-hero-body-mass {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  line-height: var(--lh-heading);
+}
+
+h1 {
+  font-size: var(--fs-heading-xlarge);
+  font-weight: var(--fw-bold);
+}
+
+.first-hero-body-mass p,
+.first-hero-body-mass h1 {
+  margin-block: 1rem;
+}
+
+/* form section */
+.first-hero-form {
+  padding: 1.5rem;
+  background-color: var(--neutral-color);
+  border-radius: 1rem;
+  margin-block: 3rem;
+  box-shadow: 0.1rem 0.4rem 3rem 0.01rem hsl(200 24% 88% / 0.7);
+}
+
+.first-hero-form fieldset {
+  border: none;
+}
+
+.first-hero-form legend {
+  font-size: var(--fs-heading-medium);
+  font-weight: var(--fw-bold);
+}
+
+.first-hero-form .metrics-imperial {
+  font-size: var(--fs-regular-medium);
+  font-weight: var(--fw-bold);
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+
+.first-hero-form .metrics-imperial > div {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.first-hero-form .metrics-imperial > div:nth-child(2) {
+  text-align: right;
+}
+
+/* code the input design */
+/* hide the default */
+.input-wrapper [type="radio"] {
+  display: none;
+}
+
+.input-wrapper label {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--tertiary-color);
+}
+
+.input-wrapper input[type="radio"] + label::before {
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: var(--border-color) solid 2px;
+  display: block;
+}
+
+.input-wrapper input[type="radio"]:checked + label::before {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 0.5rem solid var(--border-color);
+}
+
+/* Weight and Height Section */
+.input-wrapper input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: var(--border-color) solid 1.5px;
+  margin-block: 1rem;
+  font-size: var(--fs-heading-medium);
+  font-weight: var(--fw-bold);
+}
+
+.input-wrapper input[type="number"]::placeholder {
+  font-size: var(--fs-heading-medium);
+}
+
+/* style the input form */
+.input-wrapper div {
+  position: relative;
+}
+
+.input-wrapper div > p {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: var(--fs-heading-medium);
+  font-weight: var(--fw-bold);
+  color: var(--primary-color);
+}
+
+.welcome {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: var(--neutral-color);
+  opacity: 0.8;
+}
+
+.welcome p {
+  color: var(--neutral-color);
+}
+
+/* second hero section */
+.second-hero {
+  padding: 0;
+}
+
+.second-hero > div:nth-child(2) {
+  padding-inline: 2rem;
+}
+
+.second-hero > div:nth-child(2) > h2 {
+  font-size: var(--fs-heading-large);
+  margin-block: 2rem;
+}
+
+.second-hero div {
+  margin-block: 2rem;
+}
+
+/* benefits section */
+.benefits {
+  background-color: hsl(200 24% 88% / 0.1);
+  padding-block: 2rem;
+}
+
+.benefits .benefits-item {
+  margin-block: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Limitations */
+
+.limitations {
+  background: linear-gradient(
+    to bottom,
+    var(--neutral-color) 60%,
+    var(--border-color),
+    var(--neutral-color)
+  );
+  padding: 2rem;
+}
+.limitations .limitations-heading h2 {
+  font-size: var(--fs-heading-large);
+}
+
+.limitations-heading {
+  text-align: center;
+}
+
+.limitations-heading * {
+  margin-block: 1rem;
+}
+
+.limitations .limitations-illustration {
+  display: none;
+}
+
+.limitations-card {
+  background-color: var(--neutral-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-block: 1rem;
+  box-shadow: 0.1rem 0.4rem 3rem 0.01rem hsl(200 24% 88% / 0.9);
+}
+
+.limitations-card > div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+
+@media screen and (min-width: 481px) {
+  h1 {
+    font-size: var(--fs-heading-large);
+  }
+
+  .first-hero-form legend {
+    font-size: var(--fs-heading-small);
+  }
+
+  .first-hero-form .metrics-imperial {
+    font-size: var(--fs-regular-small);
+    font-weight: var(--fw-bold);
+  }
+
+  .first-hero-form .metrics-imperial {
+    font-size: var(--fs-regular-small);
+  }
+
+  .input-wrapper label {
+    font-size: var(--fs-regular-small);
+  }
+}
+
+@media screen (min-width: 1025px) {
+  body {
+    color: blue;
+  }
+}
