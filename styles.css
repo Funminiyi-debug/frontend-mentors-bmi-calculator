@@ -121,7 +121,7 @@ p {
     var(--primary-color)
   );
   opacity: 0.2;
-  height: 70vh;
+  height: 70svh;
   width: 100%;
   z-index: -1;
   border-radius: 2rem;
@@ -263,6 +263,7 @@ h1 {
   padding: 1rem;
   border-radius: 1rem;
   color: var(--neutral-color);
+  margin-block: 1rem;
 }
 
 .welcome p {
@@ -304,12 +305,8 @@ h1 {
 /* Limitations */
 
 .limitations {
-  background: linear-gradient(
-    to bottom,
-    var(--neutral-color) 60%,
-    var(--border-color),
-    var(--neutral-color)
-  );
+  display: grid;
+  gap: 1rem;
   padding: 2rem;
 }
 .limitations .limitations-heading h2 {
@@ -326,11 +323,6 @@ h1 {
 
 .limitations .limitations-illustration {
   display: none;
-}
-
-.limitations .cards {
-  display: grid;
-  gap: 1rem;
 }
 
 .limitations-card {
@@ -357,7 +349,7 @@ h1 {
   }
 
   .bg-rectangle {
-    height: 50vh;
+    height: 50svh;
   }
 
   .welcome {
@@ -443,12 +435,16 @@ h1 {
   }
 
   /* limitations */
-  .limitations .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .limitations {
+    column-gap: 0.5rem;
   }
 
-  .limitations .cards > div:nth-child(5) {
+  .limitations .limitations-heading {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 / span 2;
+  }
+
+  .limitations > div:nth-child(7) {
     grid-column: span 2;
     width: 50%;
     align-self: center;
@@ -457,4 +453,79 @@ h1 {
 }
 
 @media screen and (min-width: 1025px) {
+  .first-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .first-hero .first-hero-body-mass {
+    padding: 2rem;
+  }
+
+  .logo img {
+    margin-left: 5rem;
+    margin-top: 2rem;
+  }
+
+  .bg-rectangle {
+    width: 75svw;
+    height: ;
+    left: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefits .benefits-item {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+  }
+
+  .benefits .benefits-item img {
+    align-self: flex-start;
+  }
+
+  .limitations {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    grid-template-areas:
+      "heading heading heading gender gender ..."
+      "... illustration age age muscle muscle"
+      "... pregnancy pregnancy race race ...";
+  }
+
+  .limitations .limitations-illustration {
+    display: block;
+    grid-area: illustration;
+  }
+
+  .limitations .limitations-heading {
+    grid-area: heading;
+    text-align: left;
+  }
+
+  .limitations > div:nth-child(3) {
+    grid-area: gender;
+  }
+  .limitations > div:nth-child(4) {
+    grid-area: age;
+  }
+  .limitations > div:nth-child(5) {
+    grid-area: muscle;
+  }
+  .limitations > div:nth-child(6) {
+    grid-area: pregnancy;
+  }
+  .limitations > div:nth-child(7) {
+    grid-area: race;
+    width: 100%;
+  }
 }
