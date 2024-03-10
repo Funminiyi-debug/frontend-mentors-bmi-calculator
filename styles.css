@@ -89,6 +89,13 @@ h6 {
   --fw-regular: 400;
   --fw-bold: 700;
   --fw-bolder: 800;
+
+  /* experiment */
+  --fs-heading-xlarge: 2rem;
+  --fs-heading-large: 1.375rem;
+  --fs-heading-medium: 1.25rem;
+
+  --fs-regular-medium: 0.875rem;
 }
 
 body {
@@ -96,6 +103,9 @@ body {
   font-size: var(--fs-regular-medium);
   background-color: var(--neutral-color);
   position: relative;
+  max-width: min(100%, 1026px);
+  min-width: 389px;
+  margin: auto;
 }
 
 p {
@@ -104,12 +114,12 @@ p {
 
 .logo {
   width: 100%;
-  margin-top: 1rem;
 }
 
 .logo img {
-  height: 2.5rem;
+  height: 5rem;
   margin: auto;
+  padding: 1rem;
 }
 
 .bg-rectangle {
@@ -121,13 +131,12 @@ p {
     var(--primary-color)
   );
   opacity: 0.2;
-  height: 70svh;
+  height: 55svh;
   width: 100%;
   z-index: -1;
-  border-radius: 2rem;
+  border-radius: 0rem 0 2rem 2rem;
   top: 0;
   right: 0;
-  margin-top: -2rem;
 }
 
 .container {
@@ -470,8 +479,8 @@ h1 {
   }
 
   .bg-rectangle {
-    width: 75svw;
-    height: ;
+    width: calc(0.7 * 100%);
+    height: 55svh;
     left: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 0;
@@ -510,6 +519,7 @@ h1 {
   .limitations .limitations-heading {
     grid-area: heading;
     text-align: left;
+    padding-left: 2rem;
   }
 
   .limitations > div:nth-child(3) {
