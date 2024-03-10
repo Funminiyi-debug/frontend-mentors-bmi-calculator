@@ -169,7 +169,7 @@ h1 {
   background-color: var(--neutral-color);
   border-radius: 1rem;
   margin-block: 3rem;
-  box-shadow: 0.1rem 0.4rem 3rem 0.01rem hsl(200 24% 88% / 0.7);
+  box-shadow: 0 12px 24px rgba(134, 144, 162, 0.35);
 }
 
 .first-hero-form fieldset {
@@ -338,7 +338,7 @@ h1 {
   background-color: var(--neutral-color);
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 0 6px 12px rgba(134, 144, 162, 0.3);
+  box-shadow: 0 12px 24px rgba(134, 144, 162, 0.35);
 }
 
 .limitations-card > div {
