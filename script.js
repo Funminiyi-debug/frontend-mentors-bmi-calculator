@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let lowerBound = idealWeightKg * 0.9;
     let upperBound = idealWeightKg * 1.1;
 
-    return `${lowerBound.toFixed(2)} - ${upperBound.toFixed(2)}`;
+    return `${lowerBound.toFixed(2)}kg - ${upperBound.toFixed(2)}kg`;
   }
 
   // Define a function to update the element's text
