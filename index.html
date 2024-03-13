@@ -43,7 +43,7 @@
                 <input
                   type="radio"
                   id="metric"
-                  name="drone"
+                  name="unit"
                   value="metric"
                   checked
                 />
@@ -53,26 +53,26 @@
                 <input
                   type="radio"
                   id="imperial"
-                  name="drone"
+                  name="unit"
                   value="imperial"
                 />
                 <label for="imperial">Imperial</label>
               </div>
             </div>
           </fieldset>
-          <div class="inputs">
+          <div class="metric">
             <div class="input-wrapper">
               <label for="Height">Height</label>
               <div>
                 <input
                   type="number"
-                  id="Height"
-                  name="Height"
+                  id="height_input_metric"
+                  name="cm"
                   min="0"
                   max="500"
                   placeholder="0"
                 />
-                <p>cm</p>
+                <p id="height_input_label">cm</p>
               </div>
             </div>
             <div class="input-wrapper">
@@ -80,20 +80,91 @@
               <div>
                 <input
                   type="number"
-                  id="Weight"
-                  name="Weight"
+                  id="weight_input_metric"
+                  name="kg"
                   min="0"
                   max="500"
                   placeholder="0"
                 />
-                <p>kg</p>
+                <p id="weight_input_label">kg</p>
               </div>
             </div>
           </div>
-          <div class="welcome">
+          <div class="imperial hide">
+            <div class="two-column imperial-height">
+              <div class="input-wrapper">
+                <label for="Height">Height</label>
+                <div>
+                  <input
+                    type="number"
+                    id="height_input_imperial_1"
+                    name="ft"
+                    min="0"
+                    max="500"
+                    placeholder="0"
+                  />
+                  <p id="height_input_label">ft</p>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <div>
+                  <input
+                    type="number"
+                    id="height_input_imperial_2"
+                    name="inch"
+                    min="0"
+                    max="500"
+                    placeholder="0"
+                  />
+                  <p id="height_input_label">inch</p>
+                </div>
+              </div>
+            </div>
+            <div class="inputs two-column imperial-weight">
+              <div class="input-wrapper">
+                <label for="Weight">Weight</label>
+                <div>
+                  <input
+                    type="number"
+                    id="weight_input_imperial_1"
+                    name="st"
+                    min="0"
+                    max="500"
+                    placeholder="0"
+                  />
+                  <p id="weight_input_label">st</p>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <div>
+                  <input
+                    type="number"
+                    id="weight_input_imperial_2"
+                    name="lbs"
+                    min="0"
+                    max="500"
+                    placeholder="0"
+                  />
+                  <p id="weight_input_label">lbs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="welcome uncalculated">
             <h2>Welcome!</h2>
             <p>
               Enter your height and weight and you'll see your BMI result here
+            </p>
+          </div>
+          <div class="welcome calculated hide">
+            <div>
+              <p>Your BMI is...</p>
+              <h2 id="bmi-result">0</h2>
+            </div>
+            <p>
+              Your BMI suggests you're a
+              <span id="bmi-category">healthy</span> weight. Your ideal weight
+              is between <span id="bmi-range">0kgs - 5kg</span>
             </p>
           </div>
         </div>
@@ -229,5 +300,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
